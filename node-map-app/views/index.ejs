@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include partials/head %>
+</head>
+<body class="container">
+
+    <header>
+        <% include partials/header %>
+    </header>
+
+    <main>
+        <script type="text/javascript">
+          var map;
+
+          require(["esri/map", "dojo/domReady!"], function(Map) {
+            map = new Map("map", {
+              basemap: "topo",  //For full list of pre-defined basemaps, navigate to http://arcg.is/1JVo6Wd
+              center: [103.8456456, 1.2825351], // longitude, latitude
+              zoom: 13
+            });
+          });
+        </script>
+        <div class="jumbotron">
+            <p>Welcome to 237, Southbridge Road</p>
+            <div id="map"></div>
+        </div>
+    </main>
+
+    <footer>
+        <% include partials/footer %>
+    </footer>
+    
+</body>
+</html>
